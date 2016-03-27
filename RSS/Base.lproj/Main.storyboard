@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137" y="400"/>
+            <point key="canvasLocation" x="1125" y="1070"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Px6-C9-pod">
@@ -41,6 +41,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="An9-io-hbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="325" y="1060"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="cPv-Od-sf5">
+            <objects>
+                <viewController id="PMB-aN-0xN" customClass="DetailViewController" customModule="RSS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fPs-dr-ibY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sr9-Ut-NBJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y78-BM-nOs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dKY-uO-CJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1125" y="391"/>
         </scene>
     </scenes>
 </document>
