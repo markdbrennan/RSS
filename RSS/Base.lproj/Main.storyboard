@@ -16,10 +16,33 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fZO-TD-MVa">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BasicCell" id="CMg-bT-0hO">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CMg-bT-0hO" id="mXy-pX-MAP">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fZO-TD-MVa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BCR-Rl-4c2"/>
+                            <constraint firstItem="fZO-TD-MVa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Wz5-su-qPv"/>
+                            <constraint firstAttribute="trailing" secondItem="fZO-TD-MVa" secondAttribute="trailing" id="cjv-Eg-VJB"/>
+                            <constraint firstAttribute="bottom" secondItem="fZO-TD-MVa" secondAttribute="bottom" id="fZA-DZ-9Sv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xxd-7r-V56"/>
                     <connections>
+                        <outlet property="tableView" destination="fZO-TD-MVa" id="x7j-kx-SEs"/>
                         <segue destination="PMB-aN-0xN" kind="show" identifier="toDetailSegue" id="esd-av-F9Q"/>
                     </connections>
                 </viewController>
