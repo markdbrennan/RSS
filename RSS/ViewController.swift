@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, FeedModelDelegate {
     
     let feedModel:FeedModel = FeedModel()
     var articles:[Article] = [Article]()
@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Set itself as the FeedModel delegate
+        self.feedModel.delegate = self
         
         // Fire off request to download articles in the background
         self.feedModel.getArticles()
@@ -29,6 +32,14 @@ class ViewController: UIViewController {
     // This method is called when a segue occurs
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+    }
+    
+    // FeedModel delegate methods
+    func articlesReady() {
+        // FeedModel has notified the view controller that articles are ready
+        self.articles = self.feedModel.articles
+        
+        // TODO: Display articles in tableview
     }
 
 

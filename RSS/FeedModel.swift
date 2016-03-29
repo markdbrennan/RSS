@@ -8,10 +8,19 @@
 
 import UIKit
 
+protocol FeedModelDelegate {
+    
+    // Any FeedModelDelegate must implement this method
+    // FeedModel will call this method when article array is ready
+    func articlesReady()
+}
+
 class FeedModel: NSObject, NSXMLParserDelegate {
     
     let feedUrlString:String = "https://www.theverge.com/rss/frontpage"
     var articles:[Article] = [Article]()
+    
+    var delegate:FeedModelDelegate?
     
     // Parser vars
     var currentElement:String = ""
@@ -93,6 +102,12 @@ class FeedModel: NSObject, NSXMLParserDelegate {
     func parserDidEndDocument(parser: NSXMLParser) {
         
         // TODO: Notify the view controller that the array of articles is ready
+        
+        // Check if there is an object assigned as the delegate
+        // If so, call the articlesReady method on the delegate
+        if let actualDelegate = self.delegate {
+            actualDelegate.articlesReady()
+        }
         
     }
 }
