@@ -16,6 +16,11 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Add icon to nav item title bar
+        let titleIcon:UIImageView = UIImageView(frame: CGRectMake(0, 0, 41, 33))
+        titleIcon.image = UIImage(named: "vergeicon")
+        self.navigationItem.titleView = titleIcon
+        
         // Check if theres an article to display
         if let actualArticle = self.articleToDisplay {
             

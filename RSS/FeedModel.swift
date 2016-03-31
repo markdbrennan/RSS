@@ -80,7 +80,32 @@ class FeedModel: NSObject, NSXMLParserDelegate {
             
         } else if elementName == "content" {
             
-            // TODO: Extract article image
+            // Extract article image from the content and save it to the articleImageUrl property of the article object
+            
+            // Search for 'http'
+            if let startRange = foundCharacters.rangeOfString("http", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil) {
+                
+                // Search for '.jpg'
+                if let endRange = foundCharacters.rangeOfString(".jpg", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil) {
+                    
+                    // Take the substring out for start range to end range
+                    let imgString:String = foundCharacters.substringWithRange(Range<String.Index>(start: startRange.startIndex, end: endRange.endIndex))
+                    
+                    self.currentlyConstructingArticle.articleImageUrl = imgString
+                    
+                    // If '.jpg' is not found, search for '.png'
+                } else if let endRange = foundCharacters.rangeOfString(".png", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil) {
+                    
+                    // Take the substring out for start range to end range
+                    let imgString:String = foundCharacters.substringWithRange(Range<String.Index>(start: startRange.startIndex, end: endRange.endIndex))
+                    
+                    self.currentlyConstructingArticle.articleImageUrl = imgString
+                    
+                }
+            }
+            
+        
+        
             
             self.currentlyConstructingArticle.articleDescription = foundCharacters
             

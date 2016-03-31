@@ -30,6 +30,11 @@ class ViewController: UIViewController, FeedModelDelegate, UITableViewDelegate, 
         
         // Fire off request to download articles in the background
         self.feedModel.getArticles()
+        
+        // Add icon to nav item title bar
+        let titleIcon:UIImageView = UIImageView(frame: CGRectMake(0, 0, 41, 33))
+        titleIcon.image = UIImage(named: "vergeicon")
+        self.navigationItem.titleView = titleIcon
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,11 +65,41 @@ class ViewController: UIViewController, FeedModelDelegate, UITableViewDelegate, 
         // Grab the elements using the tag
         let label:UILabel? = cell.viewWithTag(1) as! UILabel?
         let imageView:UIImageView? = cell.viewWithTag(2) as! UIImageView?
+        let currentArticleToDisplay:Article = self.articles[indexPath.row]
         
         // Set properties
         if let actualLabel = label {
-            let currentArticleToDisplay:Article = self.articles[indexPath.row]
             actualLabel.text = currentArticleToDisplay.articleTitle
+        }
+        
+        if let actualImageView = imageView {
+            
+            // Imageview exists
+            if currentArticleToDisplay.articleImageUrl != "" {
+                
+                // Create an NSURL object
+                let url:NSURL? = NSURL(string: currentArticleToDisplay.articleImageUrl)
+                
+                // Create an NSURL request
+                let imageRequest:NSURLRequest = NSURLRequest(URL: url!)
+                
+                // Create an NSURLSession
+                let session:NSURLSession = NSURLSession.sharedSession()
+                
+                // Create an NSURLSessionDataTask
+                let dataTask:NSURLSessionDataTask = session.dataTaskWithRequest(imageRequest, completionHandler: { (data, response, error) in
+                    
+                    // Fire off that code to execute on the main thread
+                    dispatch_async(dispatch_get_main_queue(), {
+                        // When image downloaded, use data to create a UIImage object and assign it to the imageView
+                        actualImageView.image = UIImage(data: data!)
+                    })
+                    
+                })
+                
+                dataTask.resume()
+                
+            }
         }
         
         // Set insets to zero

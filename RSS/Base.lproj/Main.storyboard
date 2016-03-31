@@ -29,9 +29,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hgG-J4-tUU">
+                                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hgG-J4-tUU">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                                 </imageView>
+                                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rw4-ys-z7I">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHl-IM-zQR">
                                                     <rect key="frame" x="20" y="10" width="560" height="79"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -40,13 +44,17 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="rw4-ys-z7I" firstAttribute="top" secondItem="mXy-pX-MAP" secondAttribute="top" id="62o-7R-Fl3"/>
                                                 <constraint firstItem="tHl-IM-zQR" firstAttribute="leading" secondItem="mXy-pX-MAP" secondAttribute="leading" constant="20" id="6Ey-M6-DUs"/>
                                                 <constraint firstAttribute="bottom" secondItem="tHl-IM-zQR" secondAttribute="bottom" constant="10" id="6rQ-KH-Fgn"/>
                                                 <constraint firstAttribute="trailing" secondItem="tHl-IM-zQR" secondAttribute="trailing" constant="20" id="8VY-TR-ZSe"/>
+                                                <constraint firstAttribute="bottom" secondItem="rw4-ys-z7I" secondAttribute="bottom" id="9d2-Vg-DEI"/>
+                                                <constraint firstItem="rw4-ys-z7I" firstAttribute="leading" secondItem="mXy-pX-MAP" secondAttribute="leading" id="HBL-7r-wJY"/>
                                                 <constraint firstItem="hgG-J4-tUU" firstAttribute="top" secondItem="mXy-pX-MAP" secondAttribute="top" id="Hnt-bk-TBH"/>
                                                 <constraint firstAttribute="bottom" secondItem="hgG-J4-tUU" secondAttribute="bottom" id="MDv-th-V2r"/>
                                                 <constraint firstAttribute="trailing" secondItem="hgG-J4-tUU" secondAttribute="trailing" id="Nxr-Z9-JLG"/>
                                                 <constraint firstItem="hgG-J4-tUU" firstAttribute="leading" secondItem="mXy-pX-MAP" secondAttribute="leading" id="XUy-hc-zhV"/>
+                                                <constraint firstAttribute="trailing" secondItem="rw4-ys-z7I" secondAttribute="trailing" id="aKB-5i-67g"/>
                                                 <constraint firstItem="tHl-IM-zQR" firstAttribute="top" secondItem="mXy-pX-MAP" secondAttribute="top" constant="10" id="fhR-Jm-X9o"/>
                                             </constraints>
                                         </tableViewCellContentView>
