@@ -50,7 +50,6 @@ class ViewController: UIViewController, FeedModelDelegate, UITableViewDelegate, 
         self.tableView.reloadData()
     }
     
-    
     // Tableview delegate methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.articles.count
@@ -122,8 +121,6 @@ class ViewController: UIViewController, FeedModelDelegate, UITableViewDelegate, 
         // Get reference to destination view controller
         let detailVC = segue.destinationViewController as! DetailViewController
         detailVC.articleToDisplay = self.selectedArticle
-        
-        // Pass along the selected article
     }
 }
 

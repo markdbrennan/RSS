@@ -37,12 +37,8 @@ class FeedModel: NSObject {
     func parserFinished() {
         // Assign parsers list of articles to self.articles
        self.articles = self.feedHelper.articles
-        
-        // Notify the view controller that the array of articles is ready
-        
-        
-        // Check if there is an object assigned as the delegate
-        // If so, call the articlesReady method on the delegate
+
+        // If an object is assigned as the delegate, call the articlesReady method on it
         if let actualDelegate = self.delegate {
             actualDelegate.articlesReady()
         }
