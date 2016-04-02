@@ -31,13 +31,8 @@ class DetailViewController: UIViewController {
             if let actualUrl = url {
                 // Create NSURLRequest for the NSURL
                 let urlRequest:NSURLRequest = NSURLRequest(URL: actualUrl)
-                
                 self.webView.loadRequest(urlRequest)
             }
-            
-            
-            // Pass the request into the webview to load page
-            
         }
     }
 

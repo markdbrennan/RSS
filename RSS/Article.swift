@@ -8,9 +8,7 @@
 
 import UIKit
 
-// This class represents each of the articles that will be displayed in the app
 class Article: NSObject {
-
     var articleTitle:String = ""
     var articleDescription:String = ""
     var articleLink:String = ""

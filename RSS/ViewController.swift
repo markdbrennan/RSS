@@ -18,7 +18,6 @@ class ViewController: UIViewController, FeedModelDelegate, UITableViewDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         // Set delegates of tableView
         self.tableView.delegate = self
@@ -96,9 +95,7 @@ class ViewController: UIViewController, FeedModelDelegate, UITableViewDelegate, 
                     })
                     
                 })
-                
                 dataTask.resume()
-                
             }
         }
         
@@ -127,9 +124,6 @@ class ViewController: UIViewController, FeedModelDelegate, UITableViewDelegate, 
         detailVC.articleToDisplay = self.selectedArticle
         
         // Pass along the selected article
-        
     }
-
-
 }
 
